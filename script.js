@@ -60,16 +60,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 function downloadCV() {
-    const cvContent = `...`; // CV content string, unchanged
-    const blob = new Blob([cvContent], { type: 'text/plain' });
-    const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
-    a.href = url;
-    a.download = 'Suryanath_Tripathy_CV.txt';
+    a.href = 'My_CV.pdf'; // Path to your PDF in public folder
+    a.download = 'Suryanath_Tripathy_CV.pdf';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-    window.URL.revokeObjectURL(url);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
